@@ -15,11 +15,11 @@ export default async function WatchPage({
   const isTV = type === "tv";
   const movie = await vkFetch(isTV ? `/tv/${id}` : `/movie/${id}`);
 
-  // Using vidsrc.to as the streaming provider with TMDB ID
+  // Using VidKing as the streaming provider with TMDB ID
   // For TV shows, we default to season 1, episode 1
   const streamUrl = isTV
-    ? `https://vidsrc.to/embed/tv/${id}/1/1`
-    : `https://vidsrc.to/embed/movie/${id}`;
+    ? `https://www.vidking.net/embed/tv/${id}/1/1`
+    : `https://www.vidking.net/embed/movie/${id}`;
 
   const title = movie.title || movie.name;
   const date = movie.release_date || movie.first_air_date;
